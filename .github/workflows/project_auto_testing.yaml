@@ -11,10 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Test authenticity verification
+      - name: Checkout Test files
+        uses: actions/checkout@v2
+        with:
+          repository: alonitac/BashProject
+          ref: main
+          path: BashProjectOriginal
+      - name: Copy test files
         run: |
-          HASH=$(find test -type f -exec cat {} + | md5sum)
-          test ${HASH:0:32} = "ed89d96ca97a48cdc188045f351264bd" || (echo "You project can not be tested. It seems that the \"test\" directory, which contains the testing scripts, has been modified. To resolve this, you can restore the original files from the original project repo: https://github.com/alonitac/BashProject" && exit 1)
+          mv -f BashProjectOriginal/test/* test/
+          rm -f -r BashProjectOriginal
 
       - name: Bash project test
         run: | 

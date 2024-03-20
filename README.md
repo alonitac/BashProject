@@ -14,8 +14,8 @@ Similarly to the [LinuxProject][LinuxProject], this project is aimed for beginne
 
 ## Preliminaries
 
-1. [Fork this repo][fork_github]. 
-2. [Clone your forked repository into a new PyCharm project][clone_pycharm].   
+1. Fork this repo (read [here][fork_github] how). 
+2. Clone your forked repository into a new PyCharm project (read [here][clone_pycharm] how).   
 
 Let's get started...
 
